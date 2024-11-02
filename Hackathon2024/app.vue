@@ -7,7 +7,6 @@
           title="Wellness Wave"
         ></v-list-item>
 
-        
       </v-app-bar>
       
       <v-main>
