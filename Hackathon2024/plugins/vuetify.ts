@@ -11,15 +11,11 @@ export default defineNuxtPlugin((app) => {
       themes: {
         light: {
           dark: false,
-          colors: {
-
-          },
+          colors: {},
         },
         dark: {
           dark: true,
-          colors: {
-  
-          },
+          colors: {},
         },
       },
     },
