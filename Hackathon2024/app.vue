@@ -11,6 +11,14 @@
         <v-list>
           <v-list-item @click="router.push('/')">
             <v-list-item-title class="font"
+              >Home&nbsp;<v-icon size="x-small"
+                >mdi-home</v-icon
+              ></v-list-item-title
+            >
+          </v-list-item>
+          <br />
+          <v-list-item @click="router.push('/')">
+            <v-list-item-title class="font"
               >Fit Tracker&nbsp;<v-icon size="x-small"
                 >mdi-weight-lifter</v-icon
               ></v-list-item-title
