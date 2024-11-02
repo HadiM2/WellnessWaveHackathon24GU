@@ -34,6 +34,13 @@
       </v-main>
     </v-app>
   </NuxtLayout>
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="font text-center">
+        &copy; 2024 Team Sugar. All rights reserved.
+      </p>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts" setup>
@@ -67,5 +74,21 @@ const menu = ref(false);
   .custom-nav-button {
     font-size: 14px; 
   }
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+  padding: 20px 0; /* Top and bottom padding */
+  color: #ffcc00; /* Yellow text for contrast */
+  text-align: center; /* Center text */
+  position: relative; /* Ensure it stays at the bottom */
+  width: 100%; /* Full width */
+  margin: 20px 0;
+  font-weight: 300;
+}
+
+.footer-content {
+  max-width: 1200px; /* Limit the width of the content */
+  margin: 0 auto; /* Center the content */
 }
 </style>
