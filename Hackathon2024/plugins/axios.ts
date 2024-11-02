@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 export default defineNuxtPlugin(() => {
-  if (process.client) {
+  if (import.meta.client) {//process.client
     if (
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1"
