@@ -1,40 +1,32 @@
 <template>
-  <v-card
-    class="font cards-right"
-    elevation="12"
-    style="border-radius: 15px; text-align: center; width: 250px; height: 350px"
-  >
-    <img
-      src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_122268757.jpeg"
-      class="card-image"
-    />
-  </v-card>
-  <div class="font cards-left">
-    <h1>Journal</h1>
-    Capture your thoughts, reflections, and experiences in a beautiful,
-    user-friendly environment. Whether you're looking to document your daily
-    life, track your goals, or explore your creativity, Wellness Wave provides
-    the perfect space for you.
-  </div>
-  <br />
-  <div>
+  <div style="display: flex; align-items: center">
     <v-card
-      class="font"
+      class="font cards-right"
       elevation="12"
       style="
         border-radius: 15px;
         text-align: center;
         width: 250px;
         height: 350px;
-        margin-left: auto;
+        display: flex;
       "
     >
       <img
-        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_250626183.jpeg"
+        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_122268757.jpeg"
         class="card-image"
       />
     </v-card>
+    <div class="font cards-left">
+      <h1>Journal</h1>
+      Capture your thoughts, reflections, and experiences in a beautiful,
+      user-friendly environment. Whether you're looking to document your daily
+      life, track your goals, or explore your creativity, Wellness Wave provides
+      the perfect space for you.
+    </div>
+  </div>
+  <br />
 
+  <div style="display: flex; align-items: center">
     <div class="font cards-right">
       <h1>Fit Tracker</h1>
       Stay on top of your health and fitness goals with Wellness Wave, designed
@@ -43,9 +35,26 @@
       maintain a healthy lifestyle, our app provides the tools you need to
       succeed.
     </div>
+    <v-card
+      class="font cards-left"
+      elevation="12"
+      style="
+        border-radius: 15px;
+        width: 250px;
+        text-align: center;
+        height: 350px;
+      "
+    >
+      <img
+        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_250626183.jpeg"
+        class="card-image"
+      />
+    </v-card>
+  </div>
 
-    <br />
+  <br />
 
+  <div style="display: flex; align-items: center">
     <v-card
       class="font"
       elevation="12"
@@ -69,8 +78,8 @@
       articles, or practical tips and tricks, our curated content will inspire
       and guide you toward a healthier lifestyle.
     </div>
-    <br />
   </div>
+  <br />
 </template>
 
 <script setup></script>
