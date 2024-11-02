@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <title>Wellness Wave</title>
-    <v-app>
+    <v-app  class="animated-background">
       <v-app-bar>
         <v-list-item class="title-font">Wellness Wave 🌊</v-list-item>
         <v-spacer></v-spacer>
@@ -62,6 +62,27 @@ const menu = ref(false);
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
+.animated-background {
+  background: radial-gradient( #a1d0e2, #669dee, #ffffff, #9ccce8, #d3ecf9);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+
+@keyframes gradientAnimation {
+  0%{
+    background-position: 0% 0%;
+  }
+  50%{
+    background-position: 100% 100%;
+
+  }
+  100%{
+    background-position: 0% 0%;
+
+  }
+}
 
 .title-font {
   font-family: "Poiret One", sans-serif;
