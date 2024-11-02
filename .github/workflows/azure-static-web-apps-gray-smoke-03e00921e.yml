@@ -25,11 +25,11 @@ jobs:
 
       - name: Install Packages
         run: npm ci
-        working-directory: /Hackathon2024
+        working-directory: ./Hackathon2024
 
       - name: Generate
         run: npm run generate
-        working-directory: /Hackathon2024
+        working-directory: ./Hackathon2024
           
       - name: Build And Deploy
         id: builddeploy
