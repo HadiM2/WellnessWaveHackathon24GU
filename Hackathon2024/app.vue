@@ -1,18 +1,18 @@
 
 <template>
   <NuxtLayout>
-    <title>Wellness Wave</title>
+    <title class="font">Wellness Wave</title>
     <v-app>
       <v-app-bar>
         <v-list-item
           title="Wellness Wave 🌊"
-          
+          class="font"
         ></v-list-item>
         <v-spacer></v-spacer>
         <v-app-bar-nav-icon @click="menu = !menu" class="custom-hamburger"></v-app-bar-nav-icon>
 
       </v-app-bar>
-      <v-navigation-drawer v-model="menu" app class="custom-app-bar">
+      <v-navigation-drawer v-model="menu" app class="custom-app-bar" >
         <v-list>
           <v-list-item @click="router.push('/')">
             <v-list-item-icon class="custom-nav-button">
@@ -112,7 +112,9 @@ const menu = ref(false); // Track menu visibility
   border-bottom: 2px solid #ffcc00; /* Sharp accent line */
 }
 
-
+.font{
+  font-family: 'Poiret One', sans-serif;
+}
 .custom-nav-button {
   font-family: 'Poiret One', sans-serif;
   font-size: 16px;
