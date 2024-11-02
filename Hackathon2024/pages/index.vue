@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; align-items: center">
+  <div style="display: flex; align-items: center;">
     <v-card
       class="font cards-right"
       elevation="12"
@@ -9,14 +9,15 @@
         width: 250px;
         height: 350px;
         display: flex;
+        margin-right: 45px;
       "
     >
       <img
-        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_122268757.jpeg"
+        src="\public\AdobeStock_122268757.jpeg"
         class="card-image"
       />
     </v-card>
-    <div class="font cards-left">
+    <div class="font cards-left" style="margin: 0; padding-top: 30px;">
       <h1>Journal</h1>
       Capture your thoughts, reflections, and experiences in a beautiful,
       user-friendly environment. Whether you're looking to document your daily
@@ -26,7 +27,8 @@
   </div>
   <br />
 
-  <div style="display: flex; align-items: center">
+  <div style="margin: 0; padding-top: 30px; display: flex;         margin-left: 620px;
+">
     <div class="font cards-right">
       <h1>Fit Tracker</h1>
       Stay on top of your health and fitness goals with Wellness Wave, designed
@@ -46,7 +48,7 @@
       "
     >
       <img
-        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_250626183.jpeg"
+        src="\public\AdobeStock_250626183.jpeg"
         class="card-image"
       />
     </v-card>
@@ -62,15 +64,17 @@
         border-radius: 15px;
         text-align: center;
         width: 250px;
-        height: 450px;
+        height: 350px;
+        display: flex;
+        margin-right: 45px;
       "
     >
       <img
-        src="C:\git\Hackathon24\Hackathon2024\public\AdobeStock_192369105.jpeg"
+        src="\public\AdobeStock_192369105.jpeg"
         class="card-image"
       />
     </v-card>
-    <div class="font cards-left">
+    <div class="font cards-left"  style="margin: 0; padding-top: 30px;">
       <h1>Tips and Tricks</h1>
 
       Dive into Wellness Wave resources designed to empower your wellness
