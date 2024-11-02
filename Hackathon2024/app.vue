@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <title class="font">Wellness Wave</title>
+    <title>Wellness Wave</title>
     <v-app>
       <v-app-bar>
         <v-list-item class="title-font">Wellness Wave 🌊</v-list-item>
@@ -43,7 +43,7 @@
   </NuxtLayout>
   <footer class="footer">
     <div class="footer-content">
-      <p class="font text-center">
+      <p class="text-center">
         &copy; 2024 Team Sugar. All rights reserved.
       </p>
     </div>
@@ -65,7 +65,7 @@ const menu = ref(false);
 
 .title-font {
   font-family: "Poiret One", sans-serif;
-  font-size: 18px;
+  font-size: 45px;
   font-weight: bolder;
   color: black;
 }
@@ -97,5 +97,8 @@ const menu = ref(false);
 .footer-content {
   max-width: 1200px; /* Limit the width of the content */
   margin: 0 auto; /* Center the content */
+  color: #ffcc00;
+  font-family: "Poiret One";
+
 }
 </style>
