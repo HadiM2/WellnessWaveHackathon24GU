@@ -1,16 +1,14 @@
-
 <template>
   <NuxtLayout>
     <title>Wellness Wave</title>
     <v-app>
       <v-app-bar>
-        <v-list-item
-          title="Wellness Wave 🌊"
-          
-        ></v-list-item>
+        <v-list-item title="Wellness Wave 🌊"></v-list-item>
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon @click="menu = !menu" class="custom-hamburger"></v-app-bar-nav-icon>
-
+        <v-app-bar-nav-icon
+          @click="menu = !menu"
+          class="custom-hamburger"
+        ></v-app-bar-nav-icon>
       </v-app-bar>
       <v-navigation-drawer v-model="menu" app class="custom-app-bar">
         <v-list>
@@ -22,7 +20,7 @@
               <v-list-item-title>Fit Tracker</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <br>
+          <br />
           <v-list-item @click="router.push('/portfolio')">
             <v-list-item-icon class="custom-nav-button">
               <v-icon>mdi-briefcase-outline</v-icon>
@@ -31,7 +29,7 @@
               <v-list-item-title>Journal</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <br>
+          <br />
           <v-list-item @click="toggleDialog">
             <v-list-item-icon class="custom-nav-button">
               <v-icon>mdi-email-outline</v-icon>
@@ -70,7 +68,7 @@ const menu = ref(false); // Track menu visibility
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 :root {
   --deep-blue: #283593;
   --sky-blue: #1976d2;
@@ -103,8 +101,6 @@ const menu = ref(false); // Track menu visibility
   }
 }
 
-
-
 .custom-app-bar {
   backdrop-filter: blur(10px); /* Transparent glass effect */
   background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent bar */
@@ -112,9 +108,8 @@ const menu = ref(false); // Track menu visibility
   border-bottom: 2px solid #ffcc00; /* Sharp accent line */
 }
 
-
 .custom-nav-button {
-  font-family: 'Poiret One', sans-serif;
+  font-family: "Poiret One", sans-serif;
   font-size: 16px;
   color: #ffcc00; /* Yellow accent for buttons */
   text-transform: uppercase;
@@ -132,7 +127,6 @@ const menu = ref(false); // Track menu visibility
 .v-list-item {
   color: white;
 }
-
 
 /* Responsive styles */
 @media (max-width: 600px) {
