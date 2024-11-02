@@ -17,25 +17,25 @@
         <v-list>
           <v-list-item @click="router.push('/')">
             <v-list-item-icon class="custom-nav-button">
-              <v-icon>mdi-home</v-icon>
+              <v-icon>mdi-weight</v-icon>
             </v-list-item-icon>
             <v-list-item-content class="custom-nav-button">
               <v-list-item-title>Fit Tracker</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <br />
-          <v-list-item @click="router.push('/portfolio')">
+          <v-list-item @click="router.push('/journal')">
             <v-list-item-icon class="custom-nav-button">
-              <v-icon>mdi-briefcase-outline</v-icon>
+              <v-icon>mdi-shark</v-icon>
             </v-list-item-icon>
             <v-list-item-content class="custom-nav-button">
               <v-list-item-title>Journal</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
           <br />
-          <v-list-item @click="toggleDialog">
+          <v-list-item @click="router.push('/articleHub')">
             <v-list-item-icon class="custom-nav-button">
-              <v-icon>mdi-email-outline</v-icon>
+              <v-icon>mdi-dog</v-icon>
             </v-list-item-icon>
             <v-list-item-content class="custom-nav-button">
               <v-list-item-title>Articles</v-list-item-title>
