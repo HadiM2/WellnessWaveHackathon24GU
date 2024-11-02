@@ -4,7 +4,8 @@
     <v-app>
       <v-app-bar>
         <v-list-item
-          title="Wellness Wave"
+          title="Wellness Wave 🌊"
+          
         ></v-list-item>
 
       </v-app-bar>
