@@ -3,7 +3,7 @@
     <v-row class="justify-center">
       <v-col cols="12" md="8">
         <v-card>
-          <v-card-title>
+          <v-card-title class="title-font">
             Journal Entries
           </v-card-title>
           <v-card-text>
@@ -14,25 +14,25 @@
                 class="journal-entry"
               >
                 <v-list-item-content>
-                  <v-list-item-title>{{ entry.title }}</v-list-item-title>
-                  <v-list-item-subtitle>{{ entry.date }}</v-list-item-subtitle>
-                  <v-list-item-text>{{ entry.content }}</v-list-item-text>
+                  <v-list-item-title class="font" >{{ entry.title }}</v-list-item-title>
+                  <v-list-item-subtitle class="font">{{ entry.date }}</v-list-item-subtitle>
+                  <v-list-item-text class="font">{{ entry.content }}</v-list-item-text>
                 </v-list-item-content>
                 
                 <v-list-item-action>
                     <v-spacer></v-spacer>
                   <v-btn icon @click="editEntry(index)">
-                    <v-icon>mdi-pencil</v-icon>
+                    <v-icon size=small>mdi-pencil</v-icon>
                   </v-btn>
                   <v-btn icon @click="deleteEntry(index)">
-                    <v-icon color="red">mdi-delete</v-icon>
+                    <v-icon color="red" size=small>mdi-delete</v-icon>                  
                   </v-btn>
                 </v-list-item-action>
               </v-list-item>
             </v-list>
           </v-card-text>
           <v-card-actions>
-            <v-btn @click="openEntryForm()">Add Entry</v-btn>
+            <v-btn class="font" @click="openEntryForm()">Add Entry</v-btn>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -41,14 +41,14 @@
     <!-- Entry Form Dialog -->
     <v-dialog v-model="showEntryForm" max-width="600">
       <v-card>
-        <v-card-title>{{ isEditing ? 'Edit' : 'Add' }} Journal Entry</v-card-title>
+        <v-card-title class="title-font">{{ isEditing ? 'Edit' : 'Add' }} Journal Entry</v-card-title>
         <v-card-text>
-          <v-text-field label="Title" v-model="currentEntry.title" required></v-text-field>
-          <v-textarea label="Content" v-model="currentEntry.content" rows="5" required></v-textarea>
+          <v-text-field class="font" label="Title" v-model="currentEntry.title" required></v-text-field>
+          <v-textarea  class="font" label="Content" v-model="currentEntry.content" rows="5" required></v-textarea>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" @click="saveEntry">{{ isEditing ? 'Update' : 'Save' }}</v-btn>
-          <v-btn text @click="cancelEntry">Cancel</v-btn>
+          <v-btn class="font" color="primary" @click="saveEntry">{{ isEditing ? 'Update' : 'Save' }}</v-btn>
+          <v-btn class="font" text @click="cancelEntry">Cancel</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -131,5 +131,18 @@ function resetForm() {
   margin-bottom: 16px;
   padding: 16px;
   border-bottom: 1px solid #eee;
+}
+
+.title-font {
+  font-family: "Poiret One", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+}
+
+.font {
+  font-family: "Poiret One";
+  font-size: larger;
+  color: black;
 }
 </style>

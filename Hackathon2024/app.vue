@@ -17,7 +17,7 @@
             >
           </v-list-item>
           <br />
-          <v-list-item @click="router.push('/')">
+          <v-list-item @click="router.push('/fitTrack')">
             <v-list-item-title class="font"
               >Fit Tracker&nbsp;<v-icon size="x-small"
                 >mdi-weight-lifter</v-icon
