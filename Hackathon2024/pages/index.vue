@@ -94,7 +94,7 @@
 .animated-background {
   background: radial-gradient( #a1d0e2, #669dee, #ffffff, #9ccce8, #d3ecf9);
   background-size: 400% 400%;
-  animation: gradientAnimation 20s ease ;
+  animation: gradientAnimation 45s ease ;
 }
 
 
