@@ -25,11 +25,11 @@
       <v-row class="justify-center">
         <v-col cols="12" md="8">
           <v-card v-for="(article, index) in filteredArticles" :key="index" class="mb-4">
-            <v-card-title>{{ article.title }}</v-card-title>
-            <v-card-subtitle>{{ article.date }}</v-card-subtitle>
-            <v-card-text>{{ article.summary }}</v-card-text>
+            <v-card-title class="title-font">{{ article.title }}</v-card-title>
+            <v-card-subtitle class="font">{{ article.date }}</v-card-subtitle>
+            <v-card-text class="font">{{ article.summary }}</v-card-text>
             <v-card-actions>
-              <v-btn @click="viewArticle(index)">Read More</v-btn>
+              <v-btn class="font" @click="viewArticle(index)">Read More</v-btn>
             </v-card-actions>
           </v-card>
         </v-col>
@@ -38,11 +38,11 @@
       <!-- Article Dialog -->
       <v-dialog v-model="showArticleDialog" max-width="800">
         <v-card>
-          <v-card-title>{{ currentArticle.title }}</v-card-title>
-          <v-card-subtitle>{{ currentArticle.date }}</v-card-subtitle>
-          <v-card-text>{{ currentArticle.content }}</v-card-text>
+          <v-card-title class="title-font">{{ currentArticle.title }}</v-card-title>
+          <v-card-subtitle class="font">{{ currentArticle.date }}</v-card-subtitle>
+          <v-card-text class="font">{{ currentArticle.content }}</v-card-text>
           <v-card-actions>
-            <v-btn text @click="showArticleDialog = false">Close</v-btn>
+            <v-btn class="font" text @click="showArticleDialog = false">Close</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -139,5 +139,18 @@
   .mb-4 {
     margin-bottom: 16px;
   }
+
+  .title-font {
+  font-family: "Poiret One", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.font {
+  font-family: "Poiret One";
+  font-size: 26;
+  color: black;
+}
   </style>
   
