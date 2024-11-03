@@ -10,7 +10,7 @@
         dark
         class="custom-app-bar"
         elevate-on-scroll>
-        <v-list-item class="title-font">Wellness Wave 🌊</v-list-item>
+        <v-list-item class="title-font" @click="router.push('/')">Wellness Wave 🌊</v-list-item>
         <v-spacer></v-spacer>
         <v-app-bar-nav-icon @click="menu = !menu"></v-app-bar-nav-icon>
       </v-app-bar>
