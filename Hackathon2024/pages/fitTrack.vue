@@ -32,7 +32,7 @@
       label="Default"
     ></v-select>
           <v-btn class="mt-4 font" color="success" block @click="saveExercise">
-            Save Exercise
+            Calculate
           </v-btn>
         </v-col>
       </v-row>
@@ -48,7 +48,7 @@
         </v-col>
         <v-col  cols="12" md="4">
           <h3 class="font">Calories Burned</h3>
-          <canvas></canvas>
+          <canvas ref="exerciseCalBurnedCanvas"></canvas>
         </v-col>
       </v-row>
     </v-container>
@@ -67,12 +67,15 @@
   
   const calories = ref(0);
   const exerciseMinutes = ref(0);
+  const calBurned = ref(0);
   const entries = ref([]);
   const exerciseEntries = ref([]);
   const calorieChartCanvas = ref(null);
   const exerciseChartCanvas = ref(null);
+  const exerciseCalBurnedCanvas = ref(null);
   let calorieChart = null;
   let exerciseChart = null;
+  let burned = null;
   const items = [
     {title: 'Run',
     props: {subtitle: 'Indoor'} },
@@ -147,7 +150,7 @@
     exerciseMinutes.value = 0;
   }
   function resetExerciseCal() {
-    caloriesFit.value = 0;
+    burn.value = 0;
   }
   
   const updateCalorieChart = () => {
@@ -233,52 +236,70 @@
       },
     });
   };
-
   const updateFitCaloriesChart = () => {
     const chartData = {};
     exerciseEntries.value.forEach(entry => {
-      const date = entry.date;
-      if (!chartData[date]) {
-        chartData[date] = 0;
-      }
-      chartData[date] += entry.minutes;
+        const date = entry.date;
+        if (!chartData[date]) {
+            chartData[date] = 0;
+        }
+        // Calculate calories burned based on the workout type
+        let burnRate = 0;
+        if (selectedWorkout.value) {
+            switch (selectedWorkout.value.title) {
+                case 'Run':
+                    burnRate = 11.4;
+                    break;
+                case 'Walk':
+                    burnRate = 4;
+                    break;
+                case 'Strength Training':
+                case 'Cycling':
+                case 'Stair Stepper':
+                    burnRate = 5;
+                    break;
+                // Add other workouts here as necessary
+            }
+        }
+        chartData[date] += burnRate * entry.minutes; // Update based on exercise minutes
     });
-  
+
     const dates = Object.keys(chartData);
     const exerciseValues = Object.values(chartData);
-  
-    const ctx = exerciseChartCanvas.value.getContext('2d');
-  
-    if (exerciseChart) {
-      exerciseChart.destroy();
+
+    const ctx = exerciseCalBurnedCanvas.value.getContext('2d'); // Corrected reference
+
+    if (burned) {
+        burned.destroy(); // Corrected chart variable reference
     }
-  
-    exerciseChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: dates,
-        datasets: [{
-          label: 'Exercise-Cal',
-          data: exerciseValues,
-          backgroundColor: 'rgba(1234, 102, 255, 0.6)',
-          borderColor: 'rgba(1234, 102, 255, 1)',
-          borderWidth: 1,
-        }],
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-          },
+
+    burned = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Calories Burned',
+                data: exerciseValues,
+                backgroundColor: 'rgba(1234, 102, 255, 0.6)',
+                borderColor: 'rgba(1234, 102, 255, 1)',
+                borderWidth: 1,
+            }],
         },
-      },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
     });
-  };
+};
   
   onMounted(() => {
     updateCalorieChart();
     updateExerciseChart();
+    updateFitCaloriesChart();
   });
   
   onBeforeUnmount(() => {
@@ -286,6 +307,9 @@
       calorieChart.destroy();
     }
     if (exerciseChart) {
+      exerciseChart.destroy();
+    }
+      if (burned) {
       exerciseChart.destroy();
     }
   });
