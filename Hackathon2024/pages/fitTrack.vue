@@ -46,13 +46,12 @@
           <h3 class="font">Exercise Minutes</h3>
           <canvas ref="exerciseChartCanvas"></canvas>
         </v-col>
+        <v-col  cols="12" md="4">
+          <h3 class="font">Calories Burned</h3>
+          <canvas></canvas>
+        </v-col>
       </v-row>
     </v-container>
- <v-spacer>
-
- </v-spacer>
- <v-spacer></v-spacer>
- <v-spacer></v-spacer>
 
     <h1 class="title-font">Calculations</h1>
 
@@ -82,7 +81,7 @@
     {title: 'Walk',
     props: {subtitle: 'Indoor' }},
     {title: 'Walk', subtitle: 'Outdoor' },
-    {title: 'Functional Strength Training'},
+    {title: 'Strength Training'},
     {title: 'Stair Stepper'},
     {title: 'Cycling'},
     {title: 'Hiking'},
@@ -118,6 +117,27 @@
       updateExerciseChart();
     }
   }
+
+  function saveExercises() {
+    
+    if (exerciseMinutes.value == "Run") {
+     caloriesFit = 11.4 * exerciseMinutes;
+    }
+    if (exerciseMinutes.value == "Walk"){
+        caloriesFit = 4 * exerciseMinutes;
+    }
+    if (exerciseMinutes.value == "Strength Training"){
+        caloriesFit = 5 * exerciseMinutes;
+    }
+    if (exerciseMinutes.value == "Cycling"){
+        caloriesFit = 5 * exerciseMinutes;
+    }
+    if (exerciseMinutes.value == "Stair Stepper"){
+        caloriesFit = 5 * exerciseMinutes;
+    }
+    resetExerciseCal();
+    updateFitCaloriesChart();
+  }
   
   function resetCalories() {
     calories.value = 0;
@@ -125,6 +145,9 @@
   
   function resetExercise() {
     exerciseMinutes.value = 0;
+  }
+  function resetExerciseCal() {
+    caloriesFit.value = 0;
   }
   
   const updateCalorieChart = () => {
@@ -197,6 +220,48 @@
           data: exerciseValues,
           backgroundColor: 'rgba(153, 102, 255, 0.6)',
           borderColor: 'rgba(153, 102, 255, 1)',
+          borderWidth: 1,
+        }],
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  };
+
+  const updateFitCaloriesChart = () => {
+    const chartData = {};
+    exerciseEntries.value.forEach(entry => {
+      const date = entry.date;
+      if (!chartData[date]) {
+        chartData[date] = 0;
+      }
+      chartData[date] += entry.minutes;
+    });
+  
+    const dates = Object.keys(chartData);
+    const exerciseValues = Object.values(chartData);
+  
+    const ctx = exerciseChartCanvas.value.getContext('2d');
+  
+    if (exerciseChart) {
+      exerciseChart.destroy();
+    }
+  
+    exerciseChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: dates,
+        datasets: [{
+          label: 'Exercise-Cal',
+          data: exerciseValues,
+          backgroundColor: 'rgba(1234, 102, 255, 0.6)',
+          borderColor: 'rgba(1234, 102, 255, 1)',
           borderWidth: 1,
         }],
       },
