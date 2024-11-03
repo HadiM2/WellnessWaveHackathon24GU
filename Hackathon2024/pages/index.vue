@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; align-items: center;">
+  <div style="display: flex; align-items: center">
     <v-card
       class="font cards-right"
       elevation="12"
@@ -11,14 +11,18 @@
         display: flex;
         margin-right: 45px;
       "
-      
     >
-      <img
-        src="\public\AdobeStock_122268757.jpeg"
-        class="card-image"
-      />
+      <img src="\public\AdobeStock_122268757.jpeg" class="card-image" />
     </v-card>
-    <div class="font cards-left" style="margin: 0; border-radius: 15px; border:1px solid black;  padding-top: 30px;">
+    <div
+      class="font cards-left"
+      style="
+        margin: 0;
+        border-radius: 15px;
+        border: 1px solid black;
+        padding-top: 30px;
+      "
+    >
       <h1>Journal</h1>
       Capture your thoughts, reflections, and experiences in a beautiful,
       user-friendly environment. Whether you're looking to document your daily
@@ -28,9 +32,17 @@
   </div>
   <br />
 
-  <div style="display: flex; align-items: center; margin-left: 620px;
-">
-    <div class="font cards-right" style="margin: 0; border-radius: 15px; border:1px solid black;  padding-top: 30px; padding-bottom: 30px;">
+  <div style="display: flex; align-items: center; margin-left: 620px">
+    <div
+      class="font cards-right"
+      style="
+        margin: 0;
+        border-radius: 15px;
+        border: 1px solid black;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      "
+    >
       <h1>Fit Tracker</h1>
       Stay on top of your health and fitness goals with Wellness Wave, designed
       to help you monitor your calorie intake and visualize your progress in an
@@ -48,10 +60,7 @@
         height: 350px;
       "
     >
-      <img
-        src="\public\AdobeStock_250626183.jpeg"
-        class="card-image"
-      />
+      <img src="\public\AdobeStock_250626183.jpeg" class="card-image" />
     </v-card>
   </div>
 
@@ -70,12 +79,17 @@
         margin-right: 45px;
       "
     >
-      <img
-        src="\public\AdobeStock_192369105.jpeg"
-        class="card-image"
-      />
+      <img src="\public\AdobeStock_192369105.jpeg" class="card-image" />
     </v-card>
-    <div class="font cards-left"  style="margin: 0; padding-top: 30px;   border-radius: 15px; border:1px solid black;">
+    <div
+      class="font cards-left"
+      style="
+        margin: 0;
+        padding-top: 30px;
+        border-radius: 15px;
+        border: 1px solid black;
+      "
+    >
       <h1>Tips and Tricks</h1>
 
       Dive into Wellness Wave resources designed to empower your wellness
@@ -93,23 +107,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 
 .animated-background {
-  background: radial-gradient( #a1d0e2, #669dee, #ffffff, #9ccce8, #d3ecf9);
+  background: radial-gradient(#a1d0e2, #669dee, #ffffff, #9ccce8, #d3ecf9);
   background-size: 400% 400%;
-  animation: gradientAnimation 45s ease ;
+  animation: gradientAnimation 45s ease;
 }
 
-
 @keyframes gradientAnimation {
-  0%{
+  0% {
     background-position: 0% 0%;
   }
-  50%{
+  50% {
     background-position: 100% 100%;
-
   }
-  100%{
+  100% {
     background-position: 0% 0%;
-
   }
 }
 
