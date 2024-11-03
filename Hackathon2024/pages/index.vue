@@ -11,6 +11,7 @@
         display: flex;
         margin-right: 45px;
       "
+      
     >
       <img
         src="\public\AdobeStock_122268757.jpeg"
