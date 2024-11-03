@@ -3,7 +3,8 @@
       <!-- Filter Section -->
       <v-row class="justify-center mb-4">
         <v-col cols="12" md="4">
-          <v-select
+          <v-select 
+          class="font"
             v-model="selectedCategory"
             :items="categories"
             label="Select Category"
@@ -12,6 +13,7 @@
         </v-col>
         <v-col cols="12" md="4">
           <v-select
+            class="font"
             v-model="selectedSubcategory"
             :items="filteredSubcategories"
             label="Select Subcategory"
@@ -24,7 +26,7 @@
       <!-- Article Cards -->
       <v-row class="justify-center">
         <v-col cols="12" md="8">
-          <v-card v-for="(article, index) in filteredArticles" :key="index" class="mb-4">
+          <v-card v-for="(article, index) in filteredArticles" :key="index" class="mb-4 font">
             <v-card-title class="title-font">{{ article.title }}</v-card-title>
             <v-card-subtitle class="font">{{ article.date }}</v-card-subtitle>
             <v-card-text class="font">{{ article.summary }}</v-card-text>
