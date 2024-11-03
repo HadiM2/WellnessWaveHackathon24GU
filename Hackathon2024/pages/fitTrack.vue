@@ -54,6 +54,11 @@
     </v-container>
 
     <h1 class="title-font">Calculations</h1>
+    <br/>
+    <h4 class="font">Your total calories for today is: {{ calorieCount }}</h4>
+    <h4 class="font">You've exercised a total of: {{ minuteCount }} minutes! </h4>
+
+
 
 
   </template>
@@ -66,6 +71,8 @@
   Chart.register(...registerables);
   
   const calories = ref(0);
+  const calorieCount = ref(0);
+  const minuteCount = ref(0);
   const exerciseMinutes = ref(0);
   const calBurned = ref(0);
   const entries = ref([]);
@@ -103,6 +110,9 @@
         date: new Date().toISOString().split('T')[0],
         calories: calories.value,
       };
+
+      calorieCount.value += calories.value;
+
       entries.value.push(newEntry);
       resetCalories();
       updateCalorieChart();
@@ -115,6 +125,8 @@
         date: new Date().toISOString().split('T')[0],
         minutes: exerciseMinutes.value,
       };
+
+      minuteCount.value += exerciseMinutes.value
       exerciseEntries.value.push(newEntry);
       resetExercise();
       updateExerciseChart();
