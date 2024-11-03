@@ -1,16 +1,19 @@
 <template>
   <NuxtLayout>
     <title>Wellness Wave</title>
-    <v-app  class="animated-background">
-      <v-app-bar         
+    <v-app class="animated-background">
+      <v-app-bar
         flat
         app
         height="80"
         color="transparent"
         dark
         class="custom-app-bar"
-        elevate-on-scroll>
-        <v-list-item class="title-font" @click="router.push('/')">Wellness Wave 🌊</v-list-item>
+        elevate-on-scroll
+      >
+        <v-list-item class="title-font" @click="router.push('/')"
+          >Wellness Wave 🌊</v-list-item
+        >
         <v-spacer></v-spacer>
         <v-app-bar-nav-icon @click="menu = !menu"></v-app-bar-nav-icon>
       </v-app-bar>
@@ -58,9 +61,7 @@
   </NuxtLayout>
   <footer class="footer">
     <div class="footer-content">
-      <p class="text-center">
-        &copy; 2024 Team Sugar. All rights reserved.
-      </p>
+      <p class="text-center">&copy; 2024 Team Sugar. All rights reserved.</p>
     </div>
   </footer>
 </template>
@@ -148,6 +149,5 @@ const menu = ref(false);
   margin: 0 auto; /* Center the content */
   color: #ffcc00;
   font-family: "Poiret One";
-
 }
 </style>
