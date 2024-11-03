@@ -56,42 +56,58 @@
   
   const articles = ref([
     {
-      title: 'Recipe 1',
+      title: 'Flavorful Chicken Fajitas',
       date: '2024-11-02',
-      summary: '',
-      content: '',
+      summary: 'Click Read More for the recipe',
+      content: '* Ingerdients: Chicken: Boneless, Peppers, Onions, Spices, Flour Tortillas' + ' * Directions: Marinate the meat, Saute the vegetables, Cook the chicken, Serve in tortillas with toppings',
       category: 'Recipes',
-      subcategory: 'What We Love'
+      subcategory: 'Chicken'
+    },
+    {
+      title: 'Skillet Beef Tamales',
+      date: '2024-11-02',
+      summary: 'Click Read More for the recipe',
+      content: '* Ingredients: Lean ground beef, corn tortillas, salsa, corn' + ' * Directions: Cook the meat, Saute the vegetables, Drain and stir in corn and salsa, Add in tortillas strips and cheese and let it melt',
+      category: 'Recipes',
+      subcategory: 'Beef'
+    },
+    {
+      title: 'Slow Cooker Vegetable Lasagne',
+      date: '2024-11-02',
+      summary: 'Click Read More for the recipe',
+      content: '* Sauté 2 sliced onions and 2 chopped garlic cloves in 1 tbsp rapeseed oil, add 2 diced courgettes and 1 each of sliced red and yellow peppers, stir in 400g chopped tomatoes, 2 tbsp tomato purée, 2 tsp vegetable bouillon, and 15g chopped basil; layer in slow cooker with sliced aubergine and 6 wholewheat lasagne sheets, top with 125g chopped vegetarian buffalo mozzarella, cover, and cook on low for 2.5-3 hours; garnish with basil before serving.',
+      category: 'Recipes',
+      subcategory: 'Vegitarian'
     },
     {
       title: 'Setting Achievable Goals',
       date: '2024-10-28',
-      summary: '',
-      content: '',
+      summary: 'Ways to set achievable goals',
+      content: 'https://hbr.org/2022/08/5-ways-to-set-more-achievable-goals',
       category: 'Healthy Life Choices',
       subcategory: 'Goal Setting'
     },
     {
       title: 'Managing Work-Life Balance',
       date: '2024-10-28',
-      summary: 'Learn how to use Vuetify to style and build responsive applications.',
-      content: 'This article covers Vuetify basics, from setup to creating beautiful UIs...',
+      summary: '17 tips to improve your work life balance',
+      content: 'https://www.smartsheet.com/content/how-to-improve-work-life-balance',
       category: 'Healthy Life Choices',
       subcategory: 'Work-Life Balance'
     },
     {
       title: 'Getting Started with Gratitude Journaling',
       date: '2024-10-28',
-      summary: '',
-      content: '',
+      summary: 'Tips to help you start journaling',
+      content: 'https://positivepsychology.com/journaling-for-mindfulness/',
       category: 'Healthy Life Choices',
       subcategory: 'Gratitude Journaling'
     },
     {
       title: 'Managing Your Stress',
       date: '2024-10-28',
-      summary: '',
-      content: '',
+      summary: 'A couple of tips to help you mange your stress',
+      content: 'https://www.apa.org/topics/stress/tips',
       category: 'Stress Management',
       subcategory: 'Meditation'
     },
