@@ -24,15 +24,15 @@ jobs:
         uses: actions/setup-node@v4.0.2
         with: 
           node-version: 18
+          
+      - name: Install packages
+        run: npm i
+        working-directory: ./Hackathon2024
 
       - name: Rebuild native modules
         run: npm rebuild
         working-directory: ./Hackathon2024
 
-      - name: Install packages
-        run: npm i
-        working-directory: ./Hackathon2024
-  
       - name: Build App
         run: |
           echo "Running npm run generate..."
