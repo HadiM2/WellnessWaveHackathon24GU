@@ -11,14 +11,48 @@ on:
 
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - name: Get Code
+        uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
+  
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.0.2
+        with: 
+          node-version: 18
+  
+      - name: Install packages
+        run: npm i
+        working-directory: ./Hackathon2024
+  
+      - name: Build App
+        run: |
+          echo "Running npm run generate..."
+          npm run generate || exit 1
+          echo "Build completed."
+        working-directory: ./Hackathon2024
+
+      # Debugging step to list directories after build
+      - name: List project directories
+        run: ls -la ./Hackathon2024
+        working-directory: ./Hackathon2024
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: ./Hackathon2024/.output/public  # Ensure this path is correct
+
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: ./Hackathon2024/.output/public
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -28,19 +62,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/Hackathon2024" # App source code path
+          app_location: "./Hackathon2024/.output/public" # App source code path
           api_location: ".output/server" # Api source code path - optional
           output_location: ".output/public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GREEN_MUSHROOM_071AAEC10 }}
-          action: "close"
