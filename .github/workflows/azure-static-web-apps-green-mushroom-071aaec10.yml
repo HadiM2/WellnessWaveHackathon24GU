@@ -4,10 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build_and_deploy_job:
@@ -26,24 +23,24 @@ jobs:
           node-version: 18
           
       - name: Install packages
-        run: npm i
-        working-directory: ./Hackathon2024
+        run: npm install
+        working-directory: ./Hackathon2024/
 
       - name: Rebuild native modules
         run: npm rebuild
-        working-directory: ./Hackathon2024
+        working-directory: ./Hackathon2024/
 
       - name: Build App
         run: |
           echo "Running npm run generate..."
           npm run generate || exit 1
           echo "Build completed."
-        working-directory: ./Hackathon2024
+        working-directory: ./Hackathon2024/
 
       # Debugging step to list directories after build
       - name: List project directories
         run: ls -la ./Hackathon2024
-        working-directory: ./Hackathon2024
+        working-directory: ./
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
