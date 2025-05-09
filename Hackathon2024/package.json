@@ -15,6 +15,7 @@
     "chart.js": "^4.4.6",
     "nuxt": "^3.13.2",
     "nuxt-storage": "^1.2.2",
+    "oxc-parser": "^0.68.1",
     "vite": "^6.3.5",
     "vue": "^3.5.13",
     "vue-router": "latest"
