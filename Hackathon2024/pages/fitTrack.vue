@@ -57,7 +57,6 @@
 </template>
 
 <script setup>
-import { VNumberInput } from "vuetify/labs/VNumberInput";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { Chart, registerables } from "chart.js";
 
